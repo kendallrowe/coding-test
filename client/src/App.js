@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { useApplicationData } from "./hooks/useApplicationData";
+
 function App() {
+
+  const { state } = useApplicationData();
+  console.log(state && state.cats)
   return (
     <div className="App">
       <header className="App-header">
