@@ -1,16 +1,18 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+
+import Carousel from "./components/Carousel";
 
 import { useApplicationData } from "./hooks/useApplicationData";
 
 function App() {
 
-  const { state } = useApplicationData();
-  console.log(state && state.cats)
+  const { state, changeCarouselSelection } = useApplicationData();
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -21,8 +23,13 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
+        <h1>Cats Rule! Also, Hire Kendall!</h1>
       </header>
+      <Carousel
+        carouselImage={state.carouselImages[state.carouselSelectedIndex]}
+        changeCarouselSelection={changeCarouselSelection}
+      />
     </div>
   );
 }
