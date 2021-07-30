@@ -7,6 +7,12 @@ const reducer = (state, action) => {
                 carouselSelectedIndex: 0
             };
 
+        case "changeCategory":
+            return {
+                ...state,
+                category: action.category
+            }
+
         case "changeSelection":
             let { carouselSelectedIndex } = state;
 

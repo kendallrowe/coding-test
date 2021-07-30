@@ -8,15 +8,15 @@ export default function Carousel(props) {
         <div className="carousel">
             <CategoryButton
                 content="Cats"
-                changeCategory={e => props.fetchImageCategory("Cats")}
+                changeCategory={e => props.changeCategory("cats")}
             />
             <CategoryButton
                 content="Sharks"
-                changeCategory={e => props.fetchImageCategory("Sharks")}
+                changeCategory={e => props.changeCategory("sharks")}
             />
             <CategoryButton
                 content="Both!"
-                changeCategory={e => props.fetchBothCategories()}
+                changeCategory={e => props.changeCategory("both")}
             />
             <NextButton
                 content="Previous"

@@ -7,7 +7,13 @@ import { useApplicationData } from "./hooks/useApplicationData";
 
 function App() {
 
-  const { state, changeCarouselSelection, fetchBothCategories, fetchImageCategory } = useApplicationData();
+  const { state, changeCarouselSelection, changeCategory } = useApplicationData();
+
+  const categoryHeadingDict = {
+    "cats": "Cats Rule!",
+    "sharks": "Sharks are... fine.",
+    "both": "Let's look at some cats and sharks!"
+  }
 
   return (
     <div className="App">
@@ -24,13 +30,12 @@ function App() {
         >
           Learn React
         </a> */}
-        <h1>Cats Rule! Also, Hire Kendall!</h1>
+        <h1>{categoryHeadingDict[state.category]} Also, Hire Kendall!</h1>
       </header>
       <Carousel
         carouselImage={state.carouselImages[state.carouselSelectedIndex]}
+        changeCategory={changeCategory}
         changeCarouselSelection={changeCarouselSelection}
-        fetchBothCategories={fetchBothCategories}
-        fetchImageCategory={fetchImageCategory}
       />
     </div>
   );

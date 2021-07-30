@@ -8,7 +8,8 @@ const baseURL = process.env.REACT_APP_BASE_URL;
 const useApplicationData = () => {
     const [state, dispatch] = useReducer(reducer, {
         carouselSelectedIndex: 0,
-        carouselImages: []
+        carouselImages: [],
+        category: "cats"
     });
 
     useEffect (() => {
@@ -16,6 +17,14 @@ const useApplicationData = () => {
     }, []);
 
     const changeCarouselSelection = indexChange => dispatch({type: "changeSelection", indexChange});
+
+    const changeCategory = category => {
+        dispatch({type: "changeCategory", category})
+        if (category === "both") {
+            return fetchBothCategories();
+        } 
+        return fetchImageCategory(category);
+    };
 
     const fetchImageCategory = category => {
         return new Promise((resolve, reject) => {
@@ -56,7 +65,7 @@ const useApplicationData = () => {
         });
     }
 
-    return { state, changeCarouselSelection, fetchBothCategories, fetchImageCategory }
+    return { state, changeCarouselSelection, changeCategory, fetchBothCategories, fetchImageCategory }
 };
 
 export { useApplicationData };
