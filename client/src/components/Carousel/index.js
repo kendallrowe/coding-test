@@ -11,10 +11,6 @@ export default function Carousel(props) {
     console.log(props.carouselImageURL)
     const { mode, transition } = useVisualMode(props.carouselImageURL ? "IMAGE" : "LOADING");
 
-    const fetchCategoryCard = category => {
-
-    };
-
     useEffect(() => {
         if (props.carouselImageURL && mode === "LOADING") {
             transition("IMAGE")
@@ -41,7 +37,7 @@ export default function Carousel(props) {
                 content="Previous"
                 changeCarouselSelection={e => props.changeCarouselSelection(-1)}
             />
-            {mode === "LOADING" && <h2>LOADING</h2>}
+            {mode === "LOADING" && <CarouselLoading/>}
             {mode === "IMAGE" && <CarouselImage carouselImage={props.carouselImageURL}/>}
             <NextButton
                 content="Next"

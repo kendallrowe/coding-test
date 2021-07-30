@@ -1,9 +1,7 @@
 import React from "react";
 
-export default function CategoryButton(props) {
+export default function CarouselLoading(props) {
     return (
-        <button onClick={props.changeCategory}>
-            {props.content}
-        </button>
+        <img src={process.env.PUBLIC_URL + "/images/cat-loading.gif"} className="carousel-image" alt="Loading message with cat running" />
     )
 };
