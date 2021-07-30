@@ -1,6 +1,8 @@
 import React, { useEffect, useReducer } from "react";
 import reducer from "../reducers/application";
 
+import shuffleArray from "../helpers/shuffleArray";
+
 const baseURL = process.env.REACT_APP_BASE_URL;
 
 const useApplicationData = () => {
@@ -10,26 +12,51 @@ const useApplicationData = () => {
     });
 
     useEffect (() => {
-        fetch(`${baseURL}/api/cats`)
-        .then(res => res.json())
-        .then(images => {
-            dispatch({
-                type: "updateCarousel",
-                images
-            });
-        })
-        .catch(err => {
-            console.log(`
-                Not able to grab cats :( 
-                ${err})
-            `)
-        });
-
+        fetchImageCategory("cats")
     }, []);
 
     const changeCarouselSelection = indexChange => dispatch({type: "changeSelection", indexChange});
 
-    return { state, changeCarouselSelection}
+    const fetchImageCategory = category => {
+        return new Promise((resolve, reject) => {
+            return fetch(`${baseURL}/api/${category}`)
+            .then(res => res.json())
+            .then(async images => {
+                await dispatch({
+                    type: "updateCarousel",
+                    images
+                });
+                resolve(images)
+            })
+            .catch(err => {
+                reject(err)
+            });
+        });
+    };
+
+    const fetchBothCategories = () => {
+        return new Promise((resolve, reject) => {
+            Promise.all([
+                fetchImageCategory("cats"),
+                fetchImageCategory("sharks")
+            ])
+            .then(all => {
+                const images = [...all[0], ...all[1]]
+
+                dispatch({
+                    type: "updateCarousel",
+                    images: shuffleArray(images)
+
+                })
+                resolve(images)
+            })
+            .catch(err => {
+                reject(err)
+            });
+        });
+    }
+
+    return { state, changeCarouselSelection, fetchBothCategories, fetchImageCategory }
 };
 
 export { useApplicationData };

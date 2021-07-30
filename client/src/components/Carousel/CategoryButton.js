@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Carousel(props) {
+export default function CategoryButton(props) {
     return (
-        <div>
-            
-        </div>
+        <button onClick={props.changeCategory}>
+            {props.content}
+        </button>
     )
 };

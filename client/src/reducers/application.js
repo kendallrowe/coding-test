@@ -3,13 +3,15 @@ const reducer = (state, action) => {
         case "updateCarousel":
             return {
                 ...state,
-                carouselImages: action.images
+                carouselImages: action.images,
+                carouselSelectedIndex: 0
             };
 
         case "changeSelection":
             let { carouselSelectedIndex } = state;
 
             carouselSelectedIndex += action.indexChange
+
             // Reset selected index to end of list if reducing below zero
             carouselSelectedIndex = (carouselSelectedIndex < 0 ? state.carouselImages.length - 1 : carouselSelectedIndex)
             // Reset selected index to beginning of list if increasing above limit

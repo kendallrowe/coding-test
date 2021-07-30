@@ -16,7 +16,7 @@ app.listen(PORT, () => {
     app.use(helmet());
 
     app.use("/api", cats(db));
-    app.use("/sharks", sharks(db));
+    app.use("/api", sharks(db));
 
     console.log(`Hi there! I'm listening on ${PORT}`);
 });

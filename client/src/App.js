@@ -7,7 +7,7 @@ import { useApplicationData } from "./hooks/useApplicationData";
 
 function App() {
 
-  const { state, changeCarouselSelection } = useApplicationData();
+  const { state, changeCarouselSelection, fetchBothCategories, fetchImageCategory } = useApplicationData();
 
   return (
     <div className="App">
@@ -29,6 +29,8 @@ function App() {
       <Carousel
         carouselImage={state.carouselImages[state.carouselSelectedIndex]}
         changeCarouselSelection={changeCarouselSelection}
+        fetchBothCategories={fetchBothCategories}
+        fetchImageCategory={fetchImageCategory}
       />
     </div>
   );
