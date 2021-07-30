@@ -23,9 +23,11 @@ body, #root, .App {
     @include flexThis(center, center, column);
 }
 
+$header-height: 5%;
 .body {
     height: 90vh;
     width: 90%;
+    max-width: 1200px;
     @include flexThis(space-between, center, column);
 
     background-color: $white;
@@ -34,4 +36,19 @@ body, #root, .App {
     opacity: .8;
 
     box-shadow: $card-box-shadow;
+
+    .card-container {
+        width: 100%;
+    }
+    
+    .card-header {
+        height: $header-height;
+        @include flexThis(center, center, row)
+    }
+    
+    .card-body {
+        height: 100% - $header-height;
+    }
+
+
 }

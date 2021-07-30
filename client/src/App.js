@@ -4,6 +4,8 @@ import Carousel from "./components/Carousel";
 
 import { useApplicationData } from "./hooks/useApplicationData";
 
+const classNames = require("classnames");
+
 function App() {
 
   const { state, changeCarouselSelection, changeCategory } = useApplicationData();
@@ -14,17 +16,22 @@ function App() {
     "both": "Let's look at some cats and sharks!"
   }
 
+  const headerClasses = classNames("card-container", "card-header");
+  const carouselBodyClasses = classNames("card-container", "card-body");
+
   return (
     <div className="App">
       <section className="body">
-        <header className="App-header">
+        <header className={headerClasses}>
           <h1>{categoryHeadingDict[state.category]} Also, Hire Kendall!</h1>
         </header>
-        <Carousel
-          carouselImageURL={state.carouselImages.length > 0 ? state.carouselImages[state.carouselSelectedIndex] : ""}
-          changeCategory={changeCategory}
-          changeCarouselSelection={changeCarouselSelection}
-        />
+        <div className={carouselBodyClasses}>
+          <Carousel
+            carouselImageURL={state.carouselImages.length > 0 ? state.carouselImages[state.carouselSelectedIndex] : ""}
+            changeCategory={changeCategory}
+            changeCarouselSelection={changeCarouselSelection}
+          />
+        </div>
       </section>
     </div>
   );

@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 
+import "./styles.scss";
+
 import CarouselImage from "./CarouselImage";
 import CarouselLoading from "./CarouselLoading";
 import CategoryButton from "./CategoryButton";
@@ -22,29 +24,31 @@ export default function Carousel(props) {
     return (
         <article className="carousel">
 
-            <div className="carouselHeader">
-                <CategoryButton
-                    content="Cats"
-                    changeCategory={e => props.changeCategory("cats")}
-                />
-                <CategoryButton
-                    content="Sharks"
-                    changeCategory={e => props.changeCategory("sharks")}
-                />
-                <CategoryButton
-                    content="Both!"
-                    changeCategory={e => props.changeCategory("both")}
-                />
+            <div className="carousel-header">
+                <div className="button-container">
+                    <CategoryButton
+                        content="Cats"
+                        changeCategory={e => props.changeCategory("cats")}
+                    />
+                    <CategoryButton
+                        content="Sharks"
+                        changeCategory={e => props.changeCategory("sharks")}
+                    />
+                    <CategoryButton
+                        content="Both!"
+                        changeCategory={e => props.changeCategory("both")}
+                    />
+                </div>
             </div>
-            <div className="carouselBody">
+            <div className="carousel-body">
                 <NextButton
-                    content="Previous"
+                    buttonType="previous"
                     changeCarouselSelection={e => props.changeCarouselSelection(-1)}
                 />
                 {mode === "LOADING" && <CarouselLoading/>}
                 {mode === "IMAGE" && <CarouselImage carouselImage={props.carouselImageURL}/>}
                 <NextButton
-                    content="Next"
+                    buttonType="next"
                     changeCarouselSelection={e => props.changeCarouselSelection(1)}
                 />
             </div>
