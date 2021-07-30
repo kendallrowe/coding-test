@@ -1,0 +1,64 @@
+@import "./mixins";
+
+$arrow-hoffset: 100px;
+@media only screen and (max-width: 1150px) {
+    .body {
+        height: 100vh !important;
+        padding: 2% !important;
+        position: relative;
+        .button-container {
+            width: 70% !important;
+        }
+
+        .carousel-body {
+            justify-content: center !important;
+            height: 70% !important;
+            .carousel-image {
+                width: 80% !important;
+                height: 75% !important;
+            }
+            
+            .next-button {
+                position: absolute;
+                bottom: 25px;
+                &--previous {
+                    left: $arrow-hoffset;
+                }
+                
+                &--next {
+                    right: $arrow-hoffset;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 550px) {
+    
+    @media only screen and (max-width: 1024px) {
+        .body {
+            width: 100% !important;
+            .carousel-body {
+                width: 100% !important;
+
+                .carousel-image {
+                    width: 100% !important;
+                    height: 75% !important;
+                }
+
+                .next-button {
+                    &--previous {
+                        left: 25px !important;
+                    }
+                    
+                    &--next {
+                        right: 25px !important;
+                    }
+                }
+            }
+        }
+    }
+
+}

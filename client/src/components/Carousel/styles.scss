@@ -8,6 +8,7 @@ $next-button-diameter: 75px;
 .carousel {
     width: 100%;
     height: 100%;
+    @include flexThis(flex-start, center, column);
     .carousel-header {
         width: 100%;
         height: $carousel-header-height;
@@ -41,7 +42,7 @@ $next-button-diameter: 75px;
     }
 
     .carousel-body {
-        height: 100% - $carousel-header-height;
+        height: 100 - $carousel-header-height;
         width: 100%;
         @include flexThis(space-between, center, row);
 
@@ -59,9 +60,12 @@ $next-button-diameter: 75px;
             text-transform: capitalize;
             height: $next-button-diameter;
             width: $next-button-diameter;
+            transition: 300ms;
 
             &:hover {
                 cursor: pointer;
+                color: $primary-blue;
+                transform: scale(1.3);
             }
 
         }

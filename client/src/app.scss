@@ -23,7 +23,7 @@ body, #root, .App {
     @include flexThis(center, center, column);
 }
 
-$header-height: 5%;
+$header-height: 10%;
 .body {
     height: 90vh;
     width: 90%;

@@ -1,4 +1,5 @@
-import "./app.scss"
+import "./app.scss";
+import "./styles/media.scss";
 
 import Carousel from "./components/Carousel";
 
@@ -23,7 +24,7 @@ function App() {
     <div className="App">
       <section className="body">
         <header className={headerClasses}>
-          <h1>{categoryHeadingDict[state.category]} Also, Hire Kendall!</h1>
+          <h1>{categoryHeadingDict[state.category]}</h1>
         </header>
         <div className={carouselBodyClasses}>
           <Carousel
