@@ -30,18 +30,21 @@ export default function Carousel(props) {
                 <div className="button-container">
                     <CategoryButton
                         content="Cats"
+                        selected={props.category === "cats"}
                         changeCategory={e => props.changeCategory("cats")}
                         url={process.env.PUBLIC_URL + "/images/cat.svg"}
                         alt="Cat by Phạm Thanh Lộc from the Noun Project"
                     />
                     <CategoryButton
                         content="Both!"
+                        selected={props.category === "both"}
                         changeCategory={e => props.changeCategory("both")}
                         url={process.env.PUBLIC_URL + "/images/random.svg"}
                         alt="random by useiconic.com from the Noun Project"
                     />
                     <CategoryButton
                         content="Sharks"
+                        selected={props.category === "sharks"}
                         changeCategory={e => props.changeCategory("sharks")}
                         url={process.env.PUBLIC_URL + "/images/shark.svg"}
                         alt="Shark by Bakunetsu Kaito from the Noun Project"
@@ -50,14 +53,12 @@ export default function Carousel(props) {
             </div>
             <div className="carousel-body">
                 <NextButton
-                    buttonType="previous"
                     changeCarouselSelection={e => props.changeCarouselSelection(-1)}
                     icon={faArrowLeft}
                 />
                 {mode === "LOADING" && <CarouselLoading/>}
                 {mode === "IMAGE" && <CarouselImage carouselImage={props.carouselImageURL}/>}
                 <NextButton
-                    buttonType="next"
                     changeCarouselSelection={e => props.changeCarouselSelection(1)}
                     icon={faArrowRight}
                 />

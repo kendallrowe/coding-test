@@ -27,6 +27,7 @@ function App() {
         </header>
         <div className={carouselBodyClasses}>
           <Carousel
+            category={state.category}
             carouselImageURL={state.carouselImages.length > 0 ? state.carouselImages[state.carouselSelectedIndex] : ""}
             changeCategory={changeCategory}
             changeCarouselSelection={changeCarouselSelection}
