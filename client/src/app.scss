@@ -1,0 +1,37 @@
+@import "styles/_colors.scss";
+@import "styles/mixins";
+@import "styles/variables";
+
+html {
+    height: 100%;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: $light-purple;
+    background-image: $background-gradient;
+}
+
+body, #root, .App {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+.App {
+    @include flexThis(center, center, column);
+}
+
+.body {
+    height: 90vh;
+    width: 90%;
+    @include flexThis(space-between, center, column);
+
+    background-color: $white;
+    padding: 3%;
+    border-radius: 25px;
+    opacity: .8;
+
+    box-shadow: $card-box-shadow;
+}

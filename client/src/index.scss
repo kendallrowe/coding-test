@@ -6,8 +6,6 @@
 @import "styles/_reset.scss";
 @import "styles/_typography.scss";
 
-.layout {
-    display: flex;
-    min-height: 100vh;
+* {
+    box-sizing: border-box;
 }
-

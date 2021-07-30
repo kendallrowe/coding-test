@@ -20,29 +20,34 @@ export default function Carousel(props) {
     }, [transition, mode, props.carouselImageURL]);
 
     return (
-        <div className="carousel">
-            <CategoryButton
-                content="Cats"
-                changeCategory={e => props.changeCategory("cats")}
-            />
-            <CategoryButton
-                content="Sharks"
-                changeCategory={e => props.changeCategory("sharks")}
-            />
-            <CategoryButton
-                content="Both!"
-                changeCategory={e => props.changeCategory("both")}
-            />
-            <NextButton
-                content="Previous"
-                changeCarouselSelection={e => props.changeCarouselSelection(-1)}
-            />
-            {mode === "LOADING" && <CarouselLoading/>}
-            {mode === "IMAGE" && <CarouselImage carouselImage={props.carouselImageURL}/>}
-            <NextButton
-                content="Next"
-                changeCarouselSelection={e => props.changeCarouselSelection(1)}
-            />
-        </div>
+        <article className="carousel">
+
+            <div className="carouselHeader">
+                <CategoryButton
+                    content="Cats"
+                    changeCategory={e => props.changeCategory("cats")}
+                />
+                <CategoryButton
+                    content="Sharks"
+                    changeCategory={e => props.changeCategory("sharks")}
+                />
+                <CategoryButton
+                    content="Both!"
+                    changeCategory={e => props.changeCategory("both")}
+                />
+            </div>
+            <div className="carouselBody">
+                <NextButton
+                    content="Previous"
+                    changeCarouselSelection={e => props.changeCarouselSelection(-1)}
+                />
+                {mode === "LOADING" && <CarouselLoading/>}
+                {mode === "IMAGE" && <CarouselImage carouselImage={props.carouselImageURL}/>}
+                <NextButton
+                    content="Next"
+                    changeCarouselSelection={e => props.changeCarouselSelection(1)}
+                />
+            </div>
+        </article>
     )
 };
