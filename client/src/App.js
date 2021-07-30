@@ -33,7 +33,7 @@ function App() {
         <h1>{categoryHeadingDict[state.category]} Also, Hire Kendall!</h1>
       </header>
       <Carousel
-        carouselImage={state.carouselImages[state.carouselSelectedIndex]}
+        carouselImageURL={state.carouselImages.length > 0 ? state.carouselImages[state.carouselSelectedIndex] : ""}
         changeCategory={changeCategory}
         changeCarouselSelection={changeCarouselSelection}
       />

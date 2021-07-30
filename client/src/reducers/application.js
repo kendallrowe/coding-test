@@ -10,7 +10,9 @@ const reducer = (state, action) => {
         case "changeCategory":
             return {
                 ...state,
-                category: action.category
+                category: action.category,
+                carouselImages: [],
+                carouselSelectedIndex: 0
             }
 
         case "changeSelection":
