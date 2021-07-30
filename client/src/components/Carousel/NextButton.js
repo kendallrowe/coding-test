@@ -1,13 +1,12 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const classNames = require("classnames");
 
 export default function NextButton(props) {
-    const buttonClasses = classNames("next-button", `button--${props.buttonType}`);
+    const buttonClasses = classNames("next-button", `next-button--${props.buttonType}`);
 
     return (
-        <button className={buttonClasses} onClick={props.changeCarouselSelection}>
-            {props.buttonType}
-        </button>
+        <FontAwesomeIcon className={buttonClasses} onClick={props.changeCarouselSelection} icon={props.icon}/>
     )
 };

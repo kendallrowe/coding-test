@@ -2,8 +2,6 @@ import React from "react";
 
 export default function CategoryButton(props) {
     return (
-        <button className="category-button" onClick={props.changeCategory}>
-            {props.content}
-        </button>
+        <img src={props.url} alt={props.alt} className="category-button" onClick={props.changeCategory}/>
     )
 };
