@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import "./styles/normalize.scss";
 import "./index.scss";
+
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
