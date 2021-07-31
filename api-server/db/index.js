@@ -12,9 +12,9 @@ class Client {
                 return sharksList;
             default:
                 throw new Error(`Tried to grab a table that does not exist ${table}`);
-        };
-    };
-};
+        }
+    }
+}
 
 const client = new Client()
 

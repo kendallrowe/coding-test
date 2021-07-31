@@ -58,7 +58,7 @@ export default function Carousel(props) {
                     icon={faArrowLeft}
                 />
                 {mode === "LOADING" && <CarouselLoading/>}
-                {mode === "IMAGE" && <CarouselImage carouselImage={props.carouselImageURL}/>}
+                {mode === "IMAGE" && <CarouselImage carouselImage={props.carouselImageURL} category={props.category}/>}
                 <NextButton
                     buttonType="next"
                     changeCarouselSelection={e => props.changeCarouselSelection(1)}
