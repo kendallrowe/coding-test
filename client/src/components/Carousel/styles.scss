@@ -12,7 +12,8 @@ $next-button-diameter: 75px;
     .carousel-header {
         width: 100%;
         height: $carousel-header-height;
-
+        text-align: center;
+        
         @include flexThis(center, center, row);
 
         .button-container{
