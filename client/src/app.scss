@@ -43,7 +43,7 @@ $header-height: 10%;
     
     .card-header {
         height: $header-height;
-        @include flexThis(center, center, row);
+        @include flexThis(center, flex-end, row);
 
         h1 {
             font-size: 3rem;

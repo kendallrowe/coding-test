@@ -24,7 +24,6 @@ $arrow-hoffset: 100px;
 
             .carousel-image {
                 width: 80% !important;
-                height: 75% !important;
             }
             
             .next-button {
@@ -49,15 +48,21 @@ $arrow-hoffset: 100px;
         width: 100% !important;
 
         .card-header {
+            height: 15% !important;
+
             h1 {
                 font-size: 1.75rem !important;
             }
         }
 
+        .card-body {
+            height: 85% !important;
+        }
+
         .button-container {
             width: 90% !important;
         }
-
+  
         .carousel-body {
             width: 100% !important;
             

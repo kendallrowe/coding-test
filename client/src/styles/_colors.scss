@@ -11,8 +11,7 @@ $light-orange: rgba(224,149,95,1);
 // Purple: #cf96dd, Green: #86e4bf, Orange: #e0955f
 $background-gradient: radial-gradient(
     circle at top left,
-    $light-purple,
-    $light-green, 35%,
-    $light-orange, 50%,
-    $light-grey 100%
+    $light-purple, 35%,
+    $light-green, 60%,
+    $light-orange 100%
 );
