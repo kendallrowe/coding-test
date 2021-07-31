@@ -1,6 +1,8 @@
 const catsList = require("./cats-list");
 const sharksList = require("./sharks-list");
 
+// Define a Client class to replicate postgres Client. Mocks usage of pg database engine for 
+// future compatibility.
 class Client {
     query(table) {
         switch (table) {
