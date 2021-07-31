@@ -1,0 +1,31 @@
+$weights: (
+    light: 300,
+    regular: 400,
+    semi-bold: 600,
+    bold: 700,
+    black: 900
+);
+
+@each $weight, $value in $weights {
+    .text--#{weight} {
+        font-weight: $value;
+    }
+}
+
+$header-font-family: 'Nunito', sans-serif;
+$body-font-family: 'Open Sans', sans-serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $header-font-family;
+    text-align: center;
+    color: $black;
+}
+
+body {
+    font-family: $body-font-family;
+}

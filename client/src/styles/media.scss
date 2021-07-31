@@ -1,0 +1,142 @@
+@import "./mixins";
+
+$arrow-hoffset: 100px;
+@media only screen and (max-width: 1150px) {
+    .body {
+        height: 100vh !important;
+        padding: 2% !important;
+        position: relative;
+        
+        .card-header {
+            h1 {
+                font-size: 2.25rem !important;
+            }
+        }
+
+        .button-container {
+            width: 70% !important;
+        }
+
+        .carousel-body {
+            justify-content: center !important;
+            height: 70% !important;
+            
+
+            .carousel-image {
+                width: 80% !important;
+            }
+            
+            .next-button {
+                position: absolute;
+                bottom: 25px;
+                &--previous {
+                    left: $arrow-hoffset;
+                }
+                
+                &--next {
+                    right: $arrow-hoffset;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 550px) {  
+    .body {
+        width: 100% !important;
+
+        .card-header {
+            height: 15% !important;
+
+            h1 {
+                font-size: 1.75rem !important;
+            }
+        }
+
+        .card-body {
+            height: 85% !important;
+        }
+
+        .button-container {
+            width: 90% !important;
+        }
+  
+        .carousel-body {
+            width: 100% !important;
+            
+
+            .carousel-image {
+                width: 100% !important;
+            }
+
+            .next-button {
+                &--previous {
+                    left: 25px !important;
+                }
+                
+                &--next {
+                    right: 25px !important;
+                }
+            }
+        }
+    }
+}
+
+$button-narrow-diameter: 40px;
+@media only screen and (max-width: 300px) {  
+    .body {
+
+        .card-header {
+            h1 {
+                font-size: 1.25rem !important;
+            }
+        }
+
+        .button-container {
+            .category-button{
+                height: $button-narrow-diameter !important;
+                width: $button-narrow-diameter !important;
+            }
+        }
+
+        .carousel-body {
+            .next-button {
+                height: $button-narrow-diameter !important;
+                width: $button-narrow-diameter !important;
+            }
+        }
+    }
+}
+
+$button-short-diameter: 25px;
+@media only screen and (max-height: 500px) {  
+    .body {
+
+        .card-header {
+            h1 {
+                font-size: 1.25rem !important;
+            }
+        }
+
+        
+        .button-container {
+            margin-top: 15px;
+            .category-button {
+                height: $button-short-diameter !important;
+                width: $button-short-diameter !important;
+            }
+        }
+
+        .carousel-body {
+            height: 85% !important;
+            .next-button {
+                bottom: 10px;
+                height: $button-short-diameter !important;
+                width: $button-short-diameter !important;
+                
+            }
+        }
+    }
+}

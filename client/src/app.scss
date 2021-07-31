@@ -1,0 +1,59 @@
+@import "styles/_colors.scss";
+@import "styles/mixins";
+@import "styles/variables";
+
+html {
+    height: 100%;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: $light-purple;
+    background-image: $background-gradient;
+}
+
+body, #root, .App {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+.App {
+    @include flexThis(center, center, column);
+}
+
+$header-height: 10%;
+.body {
+    height: 90vh;
+    width: 90%;
+    max-width: 1200px;
+    @include flexThis(space-between, center, column);
+
+    background-color: $white;
+    padding: 5%;
+    border-radius: 25px;
+    opacity: .8;
+
+    box-shadow: $card-box-shadow;
+
+    .card-container {
+        width: 100%;
+    }
+    
+    .card-header {
+        height: $header-height;
+        @include flexThis(center, flex-end, row);
+
+        h1 {
+            font-size: 3rem;
+        }
+    }
+    
+    .card-body {
+        padding-top: 15px;
+        height: 100% - $header-height;
+    }
+
+
+}

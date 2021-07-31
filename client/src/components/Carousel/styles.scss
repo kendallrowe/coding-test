@@ -1,0 +1,106 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+$carousel-header-height: 10%;
+$category-button_diameter: 50px;
+$next-button-diameter: 75px;
+.carousel {
+    width: 100%;
+    height: 100%;
+    @include flexThis(flex-start, center, column);
+    .carousel-header {
+        width: 100%;
+        height: $carousel-header-height;
+        text-align: center;
+        
+        @include flexThis(center, flex-end, row);
+
+        .button-container{
+            width: 40%;
+            @include flexThis(space-between, center, row);
+
+            .category-button {
+                background-color: none;
+                height: $category-button-diameter;
+                width: $category-button-diameter;
+                color: $white;
+                border-radius: 5px;
+                border: none;
+                transition: 400ms;
+                fill: $black;
+
+                &--selected {
+                    animation: horizontal-shake-animation 3s infinite;
+                    fill: $primary-blue;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    fill: $primary-blue;
+
+                }
+            }
+        }
+    }
+
+    .carousel-body {
+        height: 100 - $carousel-header-height;
+        width: 100%;
+        @include flexThis(space-between, center, row);
+
+
+        .carousel-image {
+            width: 65%;
+            height: 85%;
+            max-height: 100%;
+            object-fit: fill;
+        }
+
+        .next-button {
+            
+            text-transform: capitalize;
+            height: $next-button-diameter;
+            width: $next-button-diameter;
+            transition: 300ms;
+
+            &:hover {
+                cursor: pointer;
+                color: $primary-blue;
+                transform: scale(1.3);
+            }
+
+        }
+    }
+}
+
+$shake-distance: 10px;
+
+@-webkit-keyframes horizontal-shake-animation {
+  0%, 100%   { transform: scale(1.3) translateX($shake-distance) }
+  20%  { transform: scale(1.3) translateX(-$shake-distance) }
+  40%  { transform: scale(1.3) translateX($shake-distance) }
+  60%  { transform: scale(1.3) translateX(-$shake-distance) }
+  70% { transform: scale(1.3) translateX(0)}
+};
+@-moz-keyframes horizontal-shake-animation {
+  0%, 100%   { transform: scale(1.3) translateX($shake-distance) }
+  20%  { transform: scale(1.3) translateX(-$shake-distance) }
+  40%  { transform: scale(1.3) translateX($shake-distance) }
+  60%  { transform: scale(1.3) translateX(-$shake-distance) }
+  70% { transform: scale(1.3) translateX(0)}
+};
+@-o-keyframes horizontal-shake-animation {
+  0%, 100%   { transform: scale(1.3) translateX($shake-distance) }
+  20%  { transform: scale(1.3) translateX(-$shake-distance) }
+  40%  { transform: scale(1.3) translateX($shake-distance) }
+  60%  { transform: scale(1.3) translateX(-$shake-distance) }
+  70% { transform: scale(1.3) translateX(0)}
+};
+@keyframes horizontal-shake-animation {
+  0%, 100%   { transform: scale(1.3) translateX($shake-distance) }
+  20%  { transform: scale(1.3) translateX(-$shake-distance) }
+  40%  { transform: scale(1.3) translateX($shake-distance) }
+  60%  { transform: scale(1.3) translateX(-$shake-distance) }
+  70% { transform: scale(1.3) translateX(0)}
+};
