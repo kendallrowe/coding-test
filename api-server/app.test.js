@@ -13,7 +13,7 @@ describe("Test the cats API endpoint", () => {
       .get("/api/cats")
       .then(res => {
         const data = res.body
-        expect(Array.isArray(data) && data.length > 0 && typeof(data[0]) === "string");
+        expect(Array.isArray(data) && data.length > 0 && typeof(data[0]) === "string").toBe(true);
       });
   });
 });
@@ -30,7 +30,7 @@ describe("Test the sharks API endpoint", () => {
       .get("/api/sharks")
       .then(res => {
         const data = res.body
-        expect(Array.isArray(data) && data.length > 0 && typeof(data[0]) === "string");
+        expect(Array.isArray(data) && data.length > 0 && typeof(data[0]) === "string").toBe(true);
       });
   });
 });
