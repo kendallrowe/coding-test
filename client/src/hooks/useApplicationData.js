@@ -28,7 +28,7 @@ const useApplicationData = () => {
 
     const fetchImageCategory = category => {
         return new Promise((resolve, reject) => {
-            return fetch(`${baseURL}/api/${category}`)
+            return fetch(`${baseURL ? baseURL : ""}/api/${category}`)
             .then(res => res.json())
             .then(async images => {
                 await dispatch({
