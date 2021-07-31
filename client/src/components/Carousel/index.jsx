@@ -29,21 +29,21 @@ export default function Carousel(props) {
             <div className="carousel-header">
                 <div className="button-container">
                     <CategoryButton
-                        content="Cats"
+                        type="Cat"
                         selected={props.category === "cats"}
                         changeCategory={e => props.changeCategory("cats")}
                         url={process.env.PUBLIC_URL + "/images/cat.svg"}
                         alt="Cat by Phạm Thanh Lộc from the Noun Project"
                     />
                     <CategoryButton
-                        content="Both!"
+                        type="Random"
                         selected={props.category === "both"}
                         changeCategory={e => props.changeCategory("both")}
                         url={process.env.PUBLIC_URL + "/images/random.svg"}
                         alt="random by useiconic.com from the Noun Project"
                     />
                     <CategoryButton
-                        content="Sharks"
+                        type="Shark"
                         selected={props.category === "sharks"}
                         changeCategory={e => props.changeCategory("sharks")}
                         url={process.env.PUBLIC_URL + "/images/shark.svg"}
