@@ -12,7 +12,7 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useVisualMode } from "../../hooks/useVisualMode";
 
 export default function Carousel(props) {
-    console.log(props.carouselImageURL)
+
     const { mode, transition } = useVisualMode(props.carouselImageURL ? "IMAGE" : "LOADING");
 
     useEffect(() => {

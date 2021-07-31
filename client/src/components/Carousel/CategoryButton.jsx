@@ -13,9 +13,9 @@ export default function CategoryButton(props) {
 
     return (
         <span onClick={props.changeCategory}>
-            {props.type === "Cat" && <Cat classNames={buttonClasses}/>}
-            {props.type === "Random" && <Random classNames={buttonClasses}/>}
-            {props.type === "Shark" && <Shark classNames={buttonClasses}/>}
+            {props.type === "Cat" && <Cat classNames={buttonClasses} alt={props.alt}/>}
+            {props.type === "Random" && <Random classNames={buttonClasses} alt={props.alt}/>}
+            {props.type === "Shark" && <Shark classNames={buttonClasses} alt={props.alt}/>}
         </span>
     )
 };

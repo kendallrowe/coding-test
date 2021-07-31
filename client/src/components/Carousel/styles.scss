@@ -32,11 +32,12 @@ $next-button-diameter: 75px;
 
                 &--selected {
                     animation: horizontal-shake-animation 3s infinite;
-                    fill: #06f;
+                    fill: $primary-blue;
                 }
 
                 &:hover {
                     cursor: pointer;
+                    fill: $primary-blue;
 
                 }
             }

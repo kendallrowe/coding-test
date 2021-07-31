@@ -2,7 +2,7 @@ import React from "react";
  
 export default function Shark(props) {
     return (
-        <svg className={props.classNames} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xmlSpace="preserve">
+        <svg alt={props.alt} className={props.classNames} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enableBackground="new 0 0 100 100" xmlSpace="preserve">
             <path d="M90.388,82.008c-0.266,1.943-0.583,2.154-0.612,2.17h-0.003c-0.409,0-1.537-1.203-2.626-2.363  c-1.46-1.555-3.456-3.686-6.148-5.793c-7.073-5.537-10.218-6.201-10.716-6.275c-0.55-0.158-1.737-0.652-2.266-1.438  c0.555,0.016,1.111,0.037,1.654,0.037c7.05,0,12.945-1.301,14.483-1.672C85.381,68.365,91.123,76.635,90.388,82.008z"/>
             <path d="M75.227,56.607l0.565,2.773c-1.722-1.553-2.765-3.088-3.354-4.176C73.403,55.727,74.331,56.188,75.227,56.607z"/>
             <path d="M76.555,57.197c0.689,0.295,1.361,0.563,2.008,0.801l-1.509,1.656L76.555,57.197z"/>
