@@ -102,25 +102,15 @@ $button-narrow-diameter: 40px;
         }
 
         .carousel-body {
-            
-
-            .carousel-image {
-            }
-
             .next-button {
                 height: $button-narrow-diameter !important;
                 width: $button-narrow-diameter !important;
-                &--previous {
-                }
-                
-                &--next {
-                }
             }
         }
     }
 }
 
-$button-short-diameter: 30px;
+$button-short-diameter: 25px;
 @media only screen and (max-height: 500px) {  
     .body {
 

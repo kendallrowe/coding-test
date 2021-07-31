@@ -65,7 +65,7 @@ const useApplicationData = () => {
         });
     }
 
-    return { state, changeCarouselSelection, changeCategory, fetchBothCategories, fetchImageCategory }
+    return { state, changeCarouselSelection, changeCategory, fetchBothCategories, fetchImageCategory };
 };
 
 export { useApplicationData };
