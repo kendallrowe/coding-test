@@ -9,7 +9,7 @@ const useApplicationData = () => {
     const [state, dispatch] = useReducer(reducer, {
         carouselSelectedIndex: 0,
         carouselImages: [],
-        category: "cats"
+        category: "both"
     });
 
     useEffect (() => {
